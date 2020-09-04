@@ -1,0 +1,49 @@
+ALGORITHM sentence
+VAR
+    s,v: STRING;
+    ls,nw,nvw,i,k: INTEGER;
+    
+BEGIN
+ s:="hello word.";
+// read a sentence
+    REPEAT
+        Read(s);
+        Write(s); 
+    UNTIL (s[s.length]==".")   
+// length of the sentence
+    ls:=0;
+    FOR i FROM 1 TO length(s) STEP 1 DO
+        IF (s[i]<>" ") THEN
+            ls=ls+1;
+        END_IF
+    END_FOR
+    Write(ls=);
+// number of words in the sentence
+    nw:=1;
+    i:=0;
+    WHILE (i<length(s)) DO
+        IF (s[i]==" " and s[i]<>"") THEN
+            nw=nw+1;
+        ELSE
+            IF (s[i]=="") THEN
+                nw=0;
+                i=i+1;
+            END_IF
+        END_IF
+    END_WHILE
+    Write(nw=);
+// number of vowels in the sentence
+    v:="aeouiy";
+    nvw:=0;
+    g:=" ";
+    FOR i FROM 1 TO length(s) STEP 1  DO
+        g:=s[i];
+        FOR k FROM 1 TO length(v) STEP 1  DO
+            IF (g==v[k]) THEN
+                nvw:=nvw+1;
+            END_IF
+        END_FOR
+    END_FOR
+        
+    Write(nvw=);
+END
