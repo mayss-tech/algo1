@@ -1,7 +1,7 @@
 ALGORITHM sentence
 VAR
     s,v: STRING;
-    ls,nw,nvw,i,k: INTEGER;
+    ls,nw,nvw,i,k: INTEGER:=0;
     
 BEGIN
  s:="hello word.";

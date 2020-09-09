@@ -1,0 +1,32 @@
+ALGORITHM Linear_Data_1 //sum of all distinct elements from the set
+VAR
+    arr1 : ARRAY_OF INTEGER[3];
+    arr2 : ARRAY_OF INTEGER[4];
+    i,j,k,N,count1,count2,sum:=INTEGER;
+    htab: HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+// solution 1 :array
+    arr1:={3, 1, 7, 9};
+    arr2:={2, 4, 1, 9, 3};
+    count1,count2,sum:=0;
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+    IF (arr1[i]<>arr2[j]) THEN
+        count1:=count1+i;
+        END_IF
+    END_FOR    
+    FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+        IF (arr2[j]<>arr1[i]) THEN
+        count2:=count2+j;
+        END_IF
+    END_FOR
+    sum:=count1+count2;
+// solution 2 :hash table
+
+    FOR k FROM 0 TO htab.length-1 STEP 1  DO
+        IF (htab.lookup(N(k)<>N(k))) THEN
+            sum:=htab.get(N(k));
+            sum:=sum+1;
+        END_IF
+    END_FOR
+END
+
